@@ -1,0 +1,223 @@
+.main-page {
+  background-color: transparent;
+  position: relative;
+}
+
+.block-1 {
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.block-1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.block-1 img {
+  height: 90dvh;
+  position: absolute;
+  top: unset;
+  right: auto;
+  left: auto;
+  bottom: 0;
+
+  z-index: 3;
+}
+
+.block-1__gradient {
+  width: 100%;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.09) 40%);
+  /*  background-color: rgba(0, 0, 0, 0.6); */
+  object-fit: cover;
+  z-index: 3;
+}
+
+.block-1__content {
+  width: 80%;
+  position: absolute;
+  left: auto;
+  right: auto;
+  bottom: 20dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin: 0 auto 50px auto;
+  z-index: 4;
+}
+
+.block-1__title {
+  width: 360px;
+
+  color: #f2fffc;
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 400;
+  background-position: center center;
+  border-color: transparent;
+  border-style: solid;
+
+  margin: 0 0 0 0;
+}
+
+.block-1__title span {
+  color: $secondary-color;
+  font-weight: 600;
+}
+
+.btn-tg {
+  background-color: transparent;
+  background-position: center center;
+  color: #f2fffc;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 400;
+
+  border-width: 2px;
+  border-radius: 90px;
+  border-color: $secondary-color;
+  border-style: solid;
+
+  margin: 50px 0 0 0;
+  padding: 15px;
+  transition: 0.2s ease-in-out;
+}
+
+.btn-tg:hover {
+  background-color: $secondary-color_06;
+}
+
+.block-2 {
+  width: 100%;
+  min-height: 100dvh;
+  overflow: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('../../images/vineyards.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  margin: 0;
+  padding: 0;
+}
+
+.block-2__gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 1%,
+    rgba(0, 0, 0, 0.85) 10%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.3) 99%
+  );
+
+  z-index: 1;
+}
+
+.block-2__container {
+  width: 90dvw;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Две колонки, первая меньше второй */
+  grid-template-rows: auto; /* Автоматическая высота строк */
+  gap: 10px; /* Расстояние между элементами */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+
+  padding: 50px 20px 80px 20px;
+  z-index: 3;
+}
+
+.block-2__header-img {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / -1; /* Заголовок занимает всю ширину */
+}
+
+.block-2__header-title {
+  grid-column: 1 / -1;
+  font-size: clamp(16px, 3dvw, 24px);
+  color: $text-color_light;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0 auto 80px auto;
+  padding: 0;
+}
+
+.block-2__header-title span:nth-child(1) {
+  font-size: clamp(24px, 5dvw, 34px);
+}
+
+.block-2__title {
+  background-color: transparent; /* Цвет фона для наглядности */
+  padding: 10px;
+  font-size: clamp(20px, 3dvw, 30px);
+  text-transform: uppercase;
+  font-weight: 800;
+  color: $text-color_light;
+  padding: 0;
+}
+
+.block-2__card {
+  font-size: 20px;
+  color: #f1f1f1;
+  background-color: rgba($secondary-color_06, 0.3);
+  border-radius: 20px;
+  word-wrap: break-word;
+  padding: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  /*  .block-1 {
+    height: 60vh;
+  } */
+  /* .block-1 img {
+    width: 300px;
+  } */
+  .block-1 img {
+    height: 80dvh;
+  }
+  .block-1__content {
+    bottom: 10dvh;
+    margin: 0 auto 0 auto;
+  }
+  .block-1__title {
+    width: 80dvw;
+    font-size: 5dvw;
+  }
+
+  .block-2__container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .block-2__header-title {
+    margin: 0 auto 40px auto;
+  }
+}

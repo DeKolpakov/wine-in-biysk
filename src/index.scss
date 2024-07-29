@@ -1,0 +1,29 @@
+@import './vendor/normalize';
+@import './vendor/fonts/fonts';
+@import './vendor/variables.scss';
+@import './vendor/mixins.scss';
+@import './vendor/global.scss';
+
+//Cтили компонентов
+
+@import './components/Header/Header';
+
+@import './components/MainPage/MainPage.scss';
+
+@import './components/Footer/Footer';
+
+@import './components/AdultNotification/AdultNotification.scss';
+@import './components/AgeVerificationPopup/AgeVerificationPopup.scss';
+
+@import './components/NotFoundPage/NotFoundPage.scss';
+
+@import './components/DynamicTitle/DynamicTitle.scss';
+@import './components/ParalaxEffect/ParalaxEffect.scss';
+
+@import './components/BurgerMenu/BurgerMenu.scss';
+
+@import './components/PhotoGalery/PhotoGalery.scss';
+
+@import './components/UslugiPage/UslugiPage.scss';
+
+@import './components/EventCarousel/EventCarousel.scss';

@@ -1,0 +1,87 @@
+@import './variables';
+@import './mixins';
+
+// Сброс стилей
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none; // скрыть скроллбар
+
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+} // скрыть скроллбар
+
+// Базовые стили для тела
+body {
+  max-width: 1920px;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $text-color_dark;
+  background-color: $background-color;
+  line-height: 1.6;
+  font-style: normal;
+
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin: 0 auto 0 auto;
+}
+
+// Заголовки
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: $spacing-unit;
+  font-weight: bold;
+}
+
+h1 {
+  @include font($font-size-large, 700);
+}
+h2 {
+  @include font($font-size-base * 1.5, 600);
+}
+h3 {
+  @include font($font-size-base * 1.25, 500);
+}
+
+// Ссылки
+a {
+  color: $primary-color;
+  text-decoration: none;
+  @include transition(color);
+
+  &:hover,
+  &:focus {
+    color: darken($secondary-color, 1%);
+  }
+}
+
+// Кнопки
+button {
+  padding: $padding-base;
+  border: none;
+  border-radius: $border-radius;
+  background-color: $primary-color;
+  color: #fff;
+  cursor: pointer;
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: $secondary-color_06;
+  }
+}

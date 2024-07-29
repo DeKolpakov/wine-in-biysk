@@ -1,0 +1,74 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.popup-inner {
+  max-width: 60%;
+  height: auto;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: white;
+  border-radius: 16px;
+  text-align: center;
+
+  padding: 40px;
+}
+
+.popup-inner h2 {
+  margin: 0 auto 20px auto;
+}
+
+.popup-inner p {
+  margin: 0 auto 50px auto;
+}
+
+.popup-inner__buttons {
+  margin: 0 auto 0 auto;
+}
+
+.popup-inner__button-yes {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.popup-inner__button-no {
+  background-color: rgb(159, 30, 30);
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .popup-inner {
+    width: 90vw; /* Ширина 90% от ширины экрана на маленьких экранах */
+    height: auto; /* Автоматическая высота */
+    /* padding: 20px; /* Уменьшаем padding на маленьких экранах */
+  }
+
+  .popup-inner h2 {
+    margin: 0 auto 10px auto;
+  }
+  .popup-inner p {
+    margin: 0 auto 20px auto;
+  }
+}
+
+@media (max-width: 425px) {
+  .popup-inner {
+    padding: 20px; /* Уменьшаем padding на маленьких экранах */
+  }
+}

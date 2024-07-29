@@ -1,0 +1,217 @@
+.photo-gallery {
+  width: 100%;
+  position: relative;
+  background-color: $background-color_2;
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+  overflow: hidden; /* Обязательно скрываем скролл по умолчанию */
+  padding: 50px 0;
+}
+
+.slider-container {
+  display: none;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main-image {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+
+.nav-btn {
+  width: 40px;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background: none;
+  /*  border: 2px $secondary-color solid;
+  border-radius: 8px; */
+
+  font-size: 2em;
+  color: $text-color_light;
+  cursor: pointer;
+
+  padding: 0;
+}
+.nav-btn:hover {
+  background: none;
+}
+
+.nav-btn:focus {
+  background: none;
+}
+
+.nav-btn.prev {
+  left: -50px;
+}
+
+.nav-btn.next {
+  right: -50px;
+}
+
+.tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-height: 40vh; /* Ограничиваем высоту контейнера */
+  overflow-y: hidden; /* Добавляем скролл по вертикали */
+  transition: max-height 0.5s ease; /* Плавное изменение высоты */
+}
+
+.tiles-container.expanded {
+  max-height: none; /* Убираем ограничение высоты */
+}
+
+.tile-item {
+  width: 160px;
+  height: 160px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Кнопка "Смотреть больше" */
+.show-more-container {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #ffffff;
+  font-size: 16px;
+
+  border: 2px $secondary-color solid;
+  border-radius: 8px;
+  cursor: pointer;
+
+  user-select: none;
+  margin: 40px auto 0 auto;
+  padding: 10px 30px;
+}
+
+.show-more-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.show-more-container .chevron-down {
+  fill: #ffffff; /* Цвет иконки */
+  transition: transform 0.5s ease;
+}
+
+.show-more-container input:checked ~ .chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Дополнительные стили для кнопки "Смотреть больше" */
+.show-more {
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.show-more-container:hover {
+  background-color: $secondary-color_06;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  /* width: 90dvw; */
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Медиа-запросы для адаптации */
+@media (min-width: 769px) {
+  .slider-container {
+    display: block;
+  }
+
+  .tiles-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-container {
+    display: none;
+  }
+
+  .tiles-container {
+    display: flex;
+  }
+
+  .show-more {
+    display: block; /* Показываем кнопку "Смотреть больше" на мобильных */
+  }
+
+  .modal-content img {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+
+  .modal-close {
+    font-size: 1.5em;
+  }
+
+  /* Медиа-запросы для адаптации */
+  .show-more-container {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content img {
+    max-height: 100vh;
+  }
+
+  .modal-close {
+    font-size: 1em;
+  }
+}

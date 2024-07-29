@@ -1,0 +1,18 @@
+.paralax-effect {
+  position: relative;
+
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url('../../images/paralax_1.png'), url('../../images/paralax_2.png'),
+    url('../../images/paralax_3.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-position: 50% 50%;
+
+  z-index: 5;
+}

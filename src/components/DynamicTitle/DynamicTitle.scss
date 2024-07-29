@@ -1,0 +1,67 @@
+.dynamic-title {
+  width: 80%;
+  height: 10dvw;
+
+  position: absolute;
+  left: 10dvw;
+  right: 10dvw;
+  bottom: 0;
+
+  color: #ffffff;
+
+  margin: 0;
+  z-index: 5;
+}
+
+.dynamic-title p {
+  font-size: 5dvw;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  text-align: left;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.dynamic-title p span.typed-text {
+  font-weight: 500;
+  color: $secondary-color;
+}
+
+.dynamic-title p span.cursor {
+  width: 3px;
+
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+
+  animation: blink 1s infinite;
+}
+
+.dynamic-title p span.cursor.typing {
+  animation: none;
+}
+
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  49% {
+    background-color: #ccc;
+  }
+  50% {
+    background-color: transparent;
+  }
+  99% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #ccc;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .dynamic-title {
+    display: none;
+  }
+}

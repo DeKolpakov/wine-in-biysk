@@ -1,0 +1,27 @@
+// Цветовые переменные
+$primary-color: #1f4d6b;
+$secondary-color: rgba(221, 31, 59, 1);
+$secondary-color_06: rgba(221, 31, 59, 0.6);
+$background-color: #303131;
+$background-color_2: #282c34;
+$text-color_dark: #333;
+$text-color_light: #f1f1f1;
+$border-color: #e1e1e1;
+
+// Шрифты
+$font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-large: 24px;
+$font-size-small: 12px;
+
+// Отступы
+$spacing-unit: 8px;
+$padding-base: $spacing-unit * 2;
+$margin-base: $spacing-unit * 2;
+
+// Переходы
+$transition-duration: 0.3s;
+$transition-easing: ease-in-out;
+
+// Границы
+$border-radius: 4px;

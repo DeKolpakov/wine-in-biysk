@@ -1,0 +1,30 @@
+
+// Миксин для центрирования элементов
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Миксин для шрифта
+@mixin font($size, $weight: normal) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $font-family-base;
+}
+
+// Миксин для отступов
+@mixin spacing($padding: $spacing-unit, $margin: $spacing-unit) {
+  padding: $padding;
+  margin: $margin;
+}
+
+// Миксин для тени
+@mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// Миксин для переходов
+@mixin transition($property: all, $duration: $transition-duration, $easing: $transition-easing) {
+  transition: $property $duration $easing;
+}
